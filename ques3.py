@@ -1,0 +1,1 @@
+#Write a Program to to randomly generate a number from 100-1000 both inclusive values
