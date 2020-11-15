@@ -15,6 +15,17 @@ def pop(stck):
 
 
 def push(stck, e):
+    stck.append(e)
+    print("Element ", e, " was added in the list")
+    
+
+def display(stck):
+    if isempty(stck):
+        print("Stack is Empty!")
+    else:
+        for i in range(len(stck) - 1, -1, -1):
+            print(stck[i])
+
 
 stack = []
 while True:
