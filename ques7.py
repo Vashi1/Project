@@ -1,15 +1,24 @@
-# selection sort
-# Doesnt work properly
-def selection_sort(lis):
-    for i in range(len(lis) - 1): 
-        min_idx = i 
-        for j in range(i + 1, len(lis) - 1): 
-            if lis[min_idx] > lis[j]: 
-                min_idx = j 
-        lis[i], lis[min_idx] = lis[min_idx], lis[i] 
-        return lis
-
-
-A = eval(input("Enter the list to be sorted : "))
-data = selection_sort(A)
-print(data)
+import sys 
+B = []
+A = eval(input("enter the list to be sorted : ")) 
+  
+# Traverse through all array elements 
+for i in range(len(A)): 
+      
+    # Find the minimum element in remaining  
+    # unsorted array 
+    min_idx = i 
+    for j in range(i+1, len(A)): 
+        if A[min_idx] > A[j]: 
+            min_idx = j 
+              
+    # Swap the found minimum element with  
+    # the first element         
+    A[i], A[min_idx] = A[min_idx], A[i] 
+  
+# Driver code to test above 
+print ("Sorted array") 
+for i in range(len(A)): 
+    print("%d" %A[i]),  
+    B.append(A[i])
+print(B)
