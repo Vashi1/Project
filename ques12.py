@@ -1,16 +1,10 @@
-# WAP to add a line number in front of everyline
-# Not done
-f = open("ques12.txt", "r+")
-b = open("ques12new.txt", "a")
+# program to append data to Security.txt
+f = open("Security.txt", "r+")
+uid  = int(input("Enter the uid : "))
+password = input("Enter the password : ")
 data = f.readlines()
-count = 0
 for i in data:
-    a = [i]
-    a.insert(0, count)
-    for c in a:
-        d = c
-        print(d)
-    b.write(d)
-    count += 1
-
-f.close()
+    print(i)
+    print(i[0])
+    if i[0] == uid:
+        print("User id already exists")
