@@ -25,26 +25,30 @@ f = open("Security.txt", "r+")
 uid  = int(input("Enter the uid : "))
 passwor = input("Enter the password : ")
 data = f.readlines()
+f.close()
 uifile = 0
 for i in data:
-   i = i.rstrip('\n') 
-   if uid == int(i[0]):
+    i = i.rstrip('\n') 
+    if uid == int(i[0]):
             print("[!] The user_id already exists")
             break
-   else:
-       uifile == 1
+    elif uid != int(i[0]):
+       uifile = 1
+print(uifile)
 if uifile == 1:
            check_password_length(passwor)
            if check_password_length:
                     if re.search("[0-9]", passwor):
-                          if re.search("[%@$]", passwor):
-                            pass
-                          else:
-                              print("Password must contain special characte $, % or @ ")
+                            if re.search("[%@$]", passwor):
+                                print("[!] Password accecpted")
+                                f = open("Security.txt", "a")
+                                a = str(uid) + "," + passwor
+                                f.write('\n')
+                                f.write(a)
+                                f.close()
+                            else:
+                                print("Password must contain special characte $, % or @ ")
                     else:
                         print("Password must contain a digit")
-                        
-           else:
-               print("Password must be 8 chars longs")
 else:
     print()
